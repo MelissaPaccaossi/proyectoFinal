@@ -1,22 +1,53 @@
 import React from "react";
-import { Text, View, StyleSheet, } from "react-native"; 
+import { Text, View, StyleSheet, ScrollView} from "react-native"; 
+import { Entypo, FontAwesome, MaterialIcons} from '@expo/vector-icons';
 
 const BuscarGrupo = ()=>{
     return(
         <View style={styles.base}>
+            <ScrollView>
             <View style={styles.cabecera}><Text style={styles.titulo}>BUSCAR GRUPO</Text></View>
             <View style={styles.cuerpo}>
-            <View><Text>origen</Text></View>
-                <View><Text>1</Text></View>
-                <View><Text>destino</Text></View>
-                <View><Text>2</Text></View>
-                <View><Text>Alojamiento</Text></View>
-                <View><Text>3</Text></View>
-                <View><Text>Cantidad de personas</Text></View>
-                <View><Text>4</Text></View>
-                <View><Text>Fecha</Text></View>
-                <View><Text>5</Text></View>
-                <View><Text>prueba de push</Text></View>              
+                <View style={styles.cuerpoTitulo}><Text>Origen</Text></View>
+
+                <View style={styles.cuerpoInput}>
+                    <Entypo name="location-pin" size={25}/>
+                    <Text>1</Text>
+                </View>
+
+                <View style={styles.cuerpoTitulo}><Text>Destino</Text></View>
+
+                <View style={styles.cuerpoInput}>
+                    <Entypo name="location-pin" size={25}/>
+                    <Text>2</Text>
+                </View>
+
+                <View style={styles.cuerpoTitulo}><Text>Alojamiento</Text></View>
+
+                <View style={styles.cuerpoInput}>
+                    <FontAwesome name="hotel" size={25}/>
+                    <Text>3</Text>
+                </View>
+
+                <View style={styles.cuerpoTitulo}><Text>Cantidad de personas</Text></View>
+
+                <View style={styles.cuerpoInput}>
+                    <MaterialIcons name="group" size={25}/>
+                    <Text>4</Text>
+                </View>
+
+                <View style={styles.cuerpoTitulo}><Text>Fecha</Text></View>
+
+                <View style={styles.cuerpoInput}>
+                    <FontAwesome name="calendar" size={25}/>   
+                    <Text>5</Text>
+                </View>
+
+                <View style={styles.cuerpoInput}>
+                    <FontAwesome name="calendar" size={25}/>
+                    <Text>6</Text>
+                </View>              
+                
             </View>
             <View style={styles.pieDePagina}>
                 <View>
@@ -35,7 +66,7 @@ const BuscarGrupo = ()=>{
                     <Text>Ayuda</Text>
                 </View>
             </View>
-            
+            </ScrollView>
             
         </View>
         
@@ -45,13 +76,13 @@ const BuscarGrupo = ()=>{
 const styles = StyleSheet.create({
 
     base: {
-        height: 580
+        //height: 580
 
     },
 
     cabecera: {
         height: 80,
-        backgroundColor: 'lightblue',
+        backgroundColor: '#5dbbfc',
         borderwidth: 2,
         borderColor: 'black',
         justifyContent: 'center'
@@ -63,9 +94,24 @@ const styles = StyleSheet.create({
     },
 
     cuerpo: {
-        backgroundColor: 'pink',
+        backgroundColor: '#b5e0ff',
         borderColor: 'red',
-        flex:1
+        //flex:1       
+    
+    },
+    cuerpoTitulo: {
+        
+        margin: 12,
+    },
+    cuerpoInput: {
+        backgroundColor: '#e1eef7',
+        marginBottom:5,
+        marginTop: 5,
+        marginHorizontal: 15,
+        borderRadius:5,
+        height: 30,
+        flexDirection: 'row',
+
     },
     pieDePagina: {
         height: 150,
