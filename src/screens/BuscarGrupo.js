@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet, ScrollView} from "react-native"; 
+import { Text, View, StyleSheet, ScrollView, TextInput, Button} from "react-native"; 
 import { Entypo, FontAwesome, MaterialIcons} from '@expo/vector-icons';
 
 const BuscarGrupo = ()=>{
@@ -12,42 +12,47 @@ const BuscarGrupo = ()=>{
 
                 <View style={styles.cuerpoInput}>
                     <Entypo name="location-pin" size={25}/>
-                    <Text>1</Text>
+                    <TextInput style={styles.textInput}/>
                 </View>
 
                 <View style={styles.cuerpoTitulo}><Text>Destino</Text></View>
 
                 <View style={styles.cuerpoInput}>
                     <Entypo name="location-pin" size={25}/>
-                    <Text>2</Text>
+                    <TextInput style={styles.textInput} />
                 </View>
 
                 <View style={styles.cuerpoTitulo}><Text>Alojamiento</Text></View>
 
                 <View style={styles.cuerpoInput}>
                     <FontAwesome name="hotel" size={25}/>
-                    <Text>3</Text>
+                    <TextInput style={styles.textInput}/>
                 </View>
 
                 <View style={styles.cuerpoTitulo}><Text>Cantidad de personas</Text></View>
 
                 <View style={styles.cuerpoInput}>
                     <MaterialIcons name="group" size={25}/>
-                    <Text>4</Text>
+                    <TextInput style={styles.textInput} keyboardType="numeric"/>
                 </View>
 
                 <View style={styles.cuerpoTitulo}><Text>Fecha</Text></View>
 
                 <View style={styles.cuerpoInput}>
                     <FontAwesome name="calendar" size={25}/>   
-                    <Text>5</Text>
+                    <TextInput style={styles.textInput}/>
                 </View>
 
                 <View style={styles.cuerpoInput}>
                     <FontAwesome name="calendar" size={25}/>
-                    <Text>6</Text>
-                </View>              
+                    <TextInput style={styles.textInput}/>
+                </View>
                 
+                <View style={styles.boton}>
+                <Button title="BUSCAR GRUPO" color="#08234f"/>             
+                </View>
+
+
             </View>
             <View style={styles.pieDePagina}>
                 <View>
@@ -82,7 +87,7 @@ const styles = StyleSheet.create({
 
     cabecera: {
         height: 80,
-        backgroundColor: '#5dbbfc',
+        backgroundColor: '#08234f',
         borderwidth: 2,
         borderColor: 'black',
         justifyContent: 'center'
@@ -91,6 +96,7 @@ const styles = StyleSheet.create({
     titulo: {
         fontSize: 24,
         alignSelf: "center",
+        color: "white"
     },
 
     cuerpo: {
@@ -113,6 +119,18 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
 
     },
+    textInput: {
+        flex: 1,
+        marginLeft: 10,
+    },
+
+    boton: {
+        marginHorizontal: 30,
+        marginVertical: 15,
+        height: 50,
+        
+    },
+
     pieDePagina: {
         height: 150,
         backgroundColor: '#E6E4E4',
