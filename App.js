@@ -1,6 +1,7 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import BuscarGrupo from './src/screens/BuscarGrupo';
+import Login from './src/screens/Login';
 
 // <style type="text/css">{`
 //   @font-face {
@@ -16,12 +17,21 @@ import BuscarGrupo from './src/screens/BuscarGrupo';
 
 
 const navigator = createStackNavigator({
-  BuscarG: BuscarGrupo
+  BuscarG: BuscarGrupo,
+  Login: Login
   
 },{
   initialRouteName: 'BuscarG',
   defaultNavigationOptions: {
-    title: 'AVI'
+    title: 'Agente de Viaje Inteligente',
+    headerStyle: { 
+      backgroundColor: 'black'
+    },
+    headerTitleStyle: { 
+      color: 'white' , 
+      textAlign:'center',
+
+    },
   }  
 });
 
