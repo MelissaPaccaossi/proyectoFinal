@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "email": "desarrolloweb@example.com",
+      "password": "$2a$10$kCtMaYAKZ.ql05ax6yXLue07IAxKHxlA95FDDDrpsiqYM/4VO/vem",
+      "id": 1
+    },
+    {
+      "email": "melissapaccaossi@gmail.com",
+      "password": "$2a$10$J7WIO8OMMcfkCSGFmnXdZOKE8f3S1n7F8ETZoi8JpwQ85w3uE7kem",
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

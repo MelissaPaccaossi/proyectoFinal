@@ -71,10 +71,9 @@ const BuscarGrupo = ()=>{
                     <Text>Ayuda</Text>
                 </View>
             </View>
-            </ScrollView>
-            
+            </ScrollView>            
         </View>
-        
+                
     )
 }
 
