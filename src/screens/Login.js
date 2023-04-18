@@ -9,7 +9,7 @@ const { theme } = useTheme();
 return (
   <>
     <ScrollView>
-      <Text style={styles.subHeader}>Ingresar a AVI</Text>
+      <Text style={styles.subHeader}>Login AVI</Text>
       <View style={styles.horizontal}>
           <Input
           placeholder='correo@correo.com'
