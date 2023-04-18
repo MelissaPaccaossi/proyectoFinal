@@ -23,6 +23,7 @@ return (
                 width: 200,
                 marginHorizontal: 50,
                 marginVertical: 10,
+                
               }}
             />
         <Divider width={5} color={theme?.colors?.primary} />

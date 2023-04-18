@@ -1,6 +1,7 @@
 import React from "react";
-import { Text, View, StyleSheet, ScrollView, TextInput, Button} from "react-native"; 
+import { Text, View, StyleSheet, ScrollView, TextInput} from "react-native"; 
 import { Entypo, FontAwesome, MaterialIcons} from '@expo/vector-icons';
+import { Divider, Button } from '@rneui/themed';
 
 const BuscarGrupo = ()=>{
     return(
@@ -14,28 +15,28 @@ const BuscarGrupo = ()=>{
                     <Entypo name="location-pin" size={25}/>
                     <TextInput style={styles.textInput}/>
                 </View>
-
+                <Divider width={2} color="#112a52" marginTop={10}/>
                 <View style={styles.cuerpoTitulo}><Text>Destino</Text></View>
 
                 <View style={styles.cuerpoInput}>
                     <Entypo name="location-pin" size={25}/>
                     <TextInput style={styles.textInput} />
                 </View>
-
+                <Divider width={2} color="#112a52" marginTop={10}/>
                 <View style={styles.cuerpoTitulo}><Text>Alojamiento</Text></View>
 
                 <View style={styles.cuerpoInput}>
                     <FontAwesome name="hotel" size={25}/>
                     <TextInput style={styles.textInput}/>
                 </View>
-
+                <Divider width={2} color="#112a52" marginTop={10}/>
                 <View style={styles.cuerpoTitulo}><Text>Cantidad de personas</Text></View>
 
                 <View style={styles.cuerpoInput}>
                     <MaterialIcons name="group" size={25}/>
                     <TextInput style={styles.textInput} keyboardType="numeric"/>
                 </View>
-
+                <Divider width={2} color="#112a52" marginTop={10}/>
                 <View style={styles.cuerpoTitulo}><Text>Fecha</Text></View>
 
                 <View style={styles.cuerpoInput}>
@@ -47,11 +48,29 @@ const BuscarGrupo = ()=>{
                     <FontAwesome name="calendar" size={25}/>
                     <TextInput style={styles.textInput}/>
                 </View>
-                
-                <View style={styles.boton}>
-                <Button title="BUSCAR GRUPO" color="#08234f"/>             
+
+                <Divider width={2} color="#112a52" marginTop={10}/>
+
+                <View style={styles.buttonsContainer}>
+
+                <Button
+                    title="Buscar"
+                    buttonStyle={{
+                        backgroundColor: '#112a52',                        
+                        borderColor: 'white',
+                        borderRadius: 30,
+                    }}
+                    containerStyle={{
+                        marginVertical: 10,
+                        width: 200,
+                        
+                    }}
+                    
+                    titleStyle={{ fontWeight: 'bold' }}
+                />           
                 </View>
 
+                <Divider width={2} color="#112a52"/>
 
             </View>
             <View style={styles.pieDePagina}>
@@ -134,7 +153,15 @@ const styles = StyleSheet.create({
         height: 150,
         backgroundColor: '#E6E4E4',
         
-    }
+    },
+    buttonsContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        marginVertical: 10,
+    },
 
 
 })

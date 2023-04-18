@@ -21,7 +21,7 @@ const navigator = createStackNavigator({
   Login: Login
   
 },{
-  initialRouteName: 'Login',
+  initialRouteName: 'BuscarG',
   defaultNavigationOptions: {
     title: 'Agente de Viaje Inteligente',
     headerStyle: { 
