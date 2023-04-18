@@ -1,22 +1,30 @@
 import React from "react";
 import { Text, View, StyleSheet, ScrollView, TextInput} from "react-native"; 
 import { Entypo, FontAwesome, MaterialIcons} from '@expo/vector-icons';
-import { Divider, Button } from '@rneui/themed';
+import { Divider } from '@rneui/themed';
+import Boton from "../components/Boton";
 
 const BuscarGrupo = ()=>{
     return(
         <View style={styles.base}>
             <ScrollView>
-            <View style={styles.cabecera}><Text style={styles.titulo}>BUSCAR GRUPO</Text></View>
-            <View style={styles.cuerpo}>
-                <View style={styles.cuerpoTitulo}><Text>Origen</Text></View>
 
-                <View style={styles.cuerpoInput}>
-                    <Entypo name="location-pin" size={25}/>
-                    <TextInput style={styles.textInput}/>
+                <View style={styles.cabecera}>
+                    <Text style={styles.titulo}>BUSCAR GRUPO</Text>
                 </View>
-                <Divider width={2} color="#112a52" marginTop={10}/>
-                <View style={styles.cuerpoTitulo}><Text>Destino</Text></View>
+
+                 <View style={styles.cuerpo}>
+                    <View style={styles.cuerpoTitulo}>
+                        <Text>Origen</Text>
+                    </View>
+
+                    <View style={styles.cuerpoInput}>
+                        <Entypo name="location-pin" size={25}/>
+                        <TextInput style={styles.textInput}/>
+                    </View>
+                         <Divider width={2} color="#112a52" marginTop={10}/>
+                    <View style={styles.cuerpoTitulo}><Text>Destino</Text>
+                    </View>
 
                 <View style={styles.cuerpoInput}>
                     <Entypo name="location-pin" size={25}/>
@@ -51,24 +59,7 @@ const BuscarGrupo = ()=>{
 
                 <Divider width={2} color="#112a52" marginTop={10}/>
 
-                <View style={styles.buttonsContainer}>
-
-                <Button
-                    title="Buscar G"
-                    buttonStyle={{
-                        backgroundColor: '#112a52',                        
-                        borderColor: 'white',
-                        borderRadius: 30,
-                    }}
-                    containerStyle={{
-                        marginVertical: 10,
-                        width: 200,
-                        
-                    }}
-                    
-                    titleStyle={{ fontWeight: 'bold' }}
-                />           
-                </View>
+                <Boton />
 
                 <Divider width={2} color="#112a52"/>
 
@@ -154,15 +145,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#E6E4E4',
         
     },
-    buttonsContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
-        marginVertical: 10,
-    },
-
 
 })
 
