@@ -54,7 +54,7 @@ const BuscarGrupo = ()=>{
                 <View style={styles.buttonsContainer}>
 
                 <Button
-                    title="Buscar"
+                    title="Buscar G"
                     buttonStyle={{
                         backgroundColor: '#112a52',                        
                         borderColor: 'white',
