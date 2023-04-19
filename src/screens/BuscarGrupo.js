@@ -3,6 +3,8 @@ import { Text, View, StyleSheet, ScrollView, TextInput} from "react-native";
 import { Entypo, FontAwesome, MaterialIcons} from '@expo/vector-icons';
 import { Divider } from '@rneui/themed';
 import Boton from "../components/Boton";
+import DropdownComponent from "../components/Ciudades";
+
 
 const BuscarGrupo = ()=>{
     return(
@@ -13,44 +15,50 @@ const BuscarGrupo = ()=>{
                     <Text style={styles.titulo}>BUSCAR GRUPO</Text>
                 </View>
 
-                 <View style={styles.cuerpo}>
-                    <View style={styles.cuerpoTitulo}>
-                        <Text>Origen</Text>
-                    </View>
+                    <View style={styles.cuerpo}>
+                        <View style={styles.cuerpoTitulo}>
+                            <Text>Origen</Text>
+                        </View>                       
 
-                    <View style={styles.cuerpoInput}>
-                        <Entypo name="location-pin" size={25}/>
-                        <TextInput style={styles.textInput}/>
-                    </View>
+                        <DropdownComponent />
+
                          <Divider width={2} color="#112a52" marginTop={10}/>
-                    <View style={styles.cuerpoTitulo}><Text>Destino</Text>
-                    </View>
 
-                <View style={styles.cuerpoInput}>
-                    <Entypo name="location-pin" size={25}/>
-                    <TextInput style={styles.textInput} />
-                </View>
-                <Divider width={2} color="#112a52" marginTop={10}/>
-                <View style={styles.cuerpoTitulo}><Text>Alojamiento</Text></View>
+                        <View style={styles.cuerpoTitulo}>
+                            <Text>Destino</Text>
+                        </View>
+                        
+                        <DropdownComponent />
 
-                <View style={styles.cuerpoInput}>
-                    <FontAwesome name="hotel" size={25}/>
-                    <TextInput style={styles.textInput}/>
-                </View>
-                <Divider width={2} color="#112a52" marginTop={10}/>
-                <View style={styles.cuerpoTitulo}><Text>Cantidad de personas</Text></View>
+                        <Divider width={2} color="#112a52" marginTop={10}/>
 
-                <View style={styles.cuerpoInput}>
-                    <MaterialIcons name="group" size={25}/>
-                    <TextInput style={styles.textInput} keyboardType="numeric"/>
-                </View>
-                <Divider width={2} color="#112a52" marginTop={10}/>
-                <View style={styles.cuerpoTitulo}><Text>Fecha</Text></View>
+                        <View style={styles.cuerpoTitulo}>
+                            <Text>Alojamiento</Text>
+                        </View>
+                        <View style={styles.cuerpoInput}>
+                            <FontAwesome name="hotel" size={25}/>
+                            <TextInput style={styles.textInput}/>
+                        </View>
 
-                <View style={styles.cuerpoInput}>
-                    <FontAwesome name="calendar" size={25}/>   
-                    <TextInput style={styles.textInput}/>
-                </View>
+                        <Divider width={2} color="#112a52" marginTop={10}/>
+                    
+                        <View style={styles.cuerpoTitulo}>
+                            <Text>Cantidad de personas</Text>
+                        </View>
+                        <View style={styles.cuerpoInput}>
+                            <MaterialIcons name="group" size={25}/>
+                            <TextInput style={styles.textInput} keyboardType="numeric"/>
+                        </View>
+               
+                        <Divider width={2} color="#112a52" marginTop={10}/>
+
+                        <View style={styles.cuerpoTitulo}>
+                            <Text>Fecha</Text>
+                            </View>
+                        <View style={styles.cuerpoInput}>
+                            <FontAwesome name="calendar" size={25}/>   
+                            <TextInput style={styles.textInput}/>
+                        </View>
 
                 <View style={styles.cuerpoInput}>
                     <FontAwesome name="calendar" size={25}/>
