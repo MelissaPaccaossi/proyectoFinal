@@ -1,22 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 import Entypo from '@expo/vector-icons/Entypo';
-
-
-const provincia = [
-  { label: 'Salta', value: '1' },
-  { label: 'Tucuman', value: '2' },
-  { label: 'Santiago', value: '3' },  
-];
-const localidad = [
-  { label: 'Rosario', value: '1' },
-  { label: 'SAn Miguel', value: '2' },
-  { label: 'La banda', value: '3' },  
-];
+import Provincias from '../api/Provincias';
 
 const DropdownComponent = () => {
+
+  //obteniendo las provincias
+  const getProvincias = async () => {
+    const response = await Provincias.get('/provincias');
+    setProv(response.data.provincias)
+  }
+
+    //obteniendo departamentos de una provincia
+  const getDepartamento = async (idProvincia) => {
+    const response = await Provincias.get(`/departamentos?provincia=${idProvincia}&campos=id,nombre&max=999`);
+    setDepartametnos(response.data.departamentos)
+  }
+
+  //cambiar los values
   const [value, setValue] = useState(null);
+
+  const [value2, setValue2] = useState(null);
+
+  //cambiar prov por provincia
+  const [prov,setProv] = useState([]);
+  const [departamentos,setDepartametnos] = useState([]);
+
+  useEffect(() => {
+    getProvincias()
+    }, [])
 
   return (
     <View>
@@ -26,16 +39,17 @@ const DropdownComponent = () => {
       selectedTextStyle={styles.selectedTextStyle}
       inputSearchStyle={styles.inputSearchStyle}
       iconStyle={styles.iconStyle}
-      data={provincia}
+      data={prov}
       search
       maxHeight={300}
-      labelField="label"
-      valueField="value"
+      labelField="nombre"
+      valueField="id"
       placeholder="Provincia..."
       searchPlaceholder="Search..."
       value={value}
       onChange={item => {
-        setValue(item.value);
+        setValue(item.id);
+        getDepartamento(item.id);
       }}
       renderLeftIcon={() => (
         <Entypo style={styles.icon} color="black" name="location-pin" size={20} />
@@ -47,16 +61,16 @@ const DropdownComponent = () => {
       selectedTextStyle={styles.selectedTextStyle}
       inputSearchStyle={styles.inputSearchStyle}
       iconStyle={styles.iconStyle}
-      data={localidad}
+      data={departamentos}
       search
       maxHeight={300}
-      labelField="label"
-      valueField="value"
+      labelField="nombre"
+      valueField="id"
       placeholder="Localidad..."
       searchPlaceholder="Search..."
-      value={value}
+      value={value2}
       onChange={item => {
-        setValue(item.value);
+        setValue2(item.id);
       }}
       renderLeftIcon={() => (
         <Entypo style={styles.icon} color="black" name="location-pin" size={20} />
