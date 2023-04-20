@@ -1,13 +1,20 @@
-import React from "react";
-import { Text, View, StyleSheet, ScrollView, TextInput} from "react-native"; 
+import React, {useState} from "react";
+import { Text, View, StyleSheet, ScrollView, TextInput, Modal, TouchableOpacity} from "react-native"; 
 import { Entypo, FontAwesome, MaterialIcons} from '@expo/vector-icons';
 import { Divider } from '@rneui/themed';
 import Boton from "../components/Boton";
 import DropdownComponent from "../components/Ciudades";
 import SelectorFecha from '../components/SelectorFecha';
+import DatePicker from 'react-native-modern-datepicker';
 
 
 const BuscarGrupo = ()=>{
+    const [open,setOpen] = useState(false);
+
+    const handleOnPress = () => {
+        setOpen(!open)
+    }
+
     return(
         <View style={styles.base}>
             <ScrollView>
@@ -58,16 +65,34 @@ const BuscarGrupo = ()=>{
                         </View>
 
                         <View style={styles.cuerpoInput}>
-                            <FontAwesome name="calendar" size={25}/>   
-                            <TextInput style={styles.textInput} placeholder="Desde"/>
+                            <TouchableOpacity onPress={handleOnPress} style={{ flex:1 }}>
+                                 <FontAwesome name="calendar" size={25}/>
+                                 <TextInput style={styles.textInput} placeholder="Desde"/>
+                            </TouchableOpacity>  
+                            
+                            <Modal
+                            animationType="slide"
+                            transparent={true}
+                            visible={open}
+                            >
+                                <View style={styles.centeredView}>
+                                    <View style={styles.modalView}>
+                                        <DatePicker
+                                        
+                                        />
+                                        <TouchableOpacity onPress={handleOnPress}>
+                                            <Text>Cerrar</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+
+                            </Modal>
                         </View>                       
 
                         <View style={styles.cuerpoInput}>
                             <FontAwesome name="calendar" size={25}/>
                             <TextInput style={styles.textInput} placeholder="Hasta"/>
                         </View>
-
-                        <SelectorFecha />
 
                 <Divider width={2} color="#112a52" marginTop={10}/>
 
@@ -157,6 +182,34 @@ const styles = StyleSheet.create({
         backgroundColor: '#E6E4E4',
         
     },
+
+    container:{
+        flex:1,
+        backgroundColor:"#fff",
+        alignItems:"center",
+        justifyContent:"center"
+    },
+
+    centeredView:{
+        flex:1,
+        justifyContent:"center",
+        alignItems:"center",
+        marginTop:22
+    },
+
+    modalView:{
+        margin:20,
+        backgroundColor:"white",
+        borderRadius:20,
+        width: "90%",
+        padding: 35,
+        alignItems:"center",
+        shadowColor:"#000",
+        shadowOffset:{width:0, height:2},
+        shadowOpacity:0.25,
+        shadowRadius:4,
+        elevation:5
+    }
 
 })
 
