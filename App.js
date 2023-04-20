@@ -2,6 +2,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import BuscarGrupo from './src/screens/BuscarGrupo';
 import Login from './src/screens/Login';
+import SelectorFecha from './src/components/SelectorFecha';
 
 // <style type="text/css">{`
 //   @font-face {
@@ -18,7 +19,9 @@ import Login from './src/screens/Login';
 
 const navigator = createStackNavigator({
   BuscarG: BuscarGrupo,
-  Login: Login
+  Login: Login,
+  Fecha: SelectorFecha,
+
   
 },{
   initialRouteName: 'BuscarG',

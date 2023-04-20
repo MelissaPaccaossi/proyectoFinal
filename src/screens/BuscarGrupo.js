@@ -4,6 +4,7 @@ import { Entypo, FontAwesome, MaterialIcons} from '@expo/vector-icons';
 import { Divider } from '@rneui/themed';
 import Boton from "../components/Boton";
 import DropdownComponent from "../components/Ciudades";
+import SelectorFecha from '../components/SelectorFecha';
 
 
 const BuscarGrupo = ()=>{
@@ -54,16 +55,19 @@ const BuscarGrupo = ()=>{
 
                         <View style={styles.cuerpoTitulo}>
                             <Text>Fecha</Text>
-                            </View>
-                        <View style={styles.cuerpoInput}>
-                            <FontAwesome name="calendar" size={25}/>   
-                            <TextInput style={styles.textInput}/>
                         </View>
 
-                <View style={styles.cuerpoInput}>
-                    <FontAwesome name="calendar" size={25}/>
-                    <TextInput style={styles.textInput}/>
-                </View>
+                        <View style={styles.cuerpoInput}>
+                            <FontAwesome name="calendar" size={25}/>   
+                            <TextInput style={styles.textInput} placeholder="Desde"/>
+                        </View>                       
+
+                        <View style={styles.cuerpoInput}>
+                            <FontAwesome name="calendar" size={25}/>
+                            <TextInput style={styles.textInput} placeholder="Hasta"/>
+                        </View>
+
+                        <SelectorFecha />
 
                 <Divider width={2} color="#112a52" marginTop={10}/>
 

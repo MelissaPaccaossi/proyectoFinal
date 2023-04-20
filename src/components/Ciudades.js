@@ -9,7 +9,7 @@ const DropdownComponent = () => {
   //obteniendo las provincias
   const getProvincias = async () => {
     const response = await Provincias.get('/provincias');
-    setProv(response.data.provincias)
+    setProvincia(response.data.provincias)
   }
 
     //obteniendo departamentos de una provincia
@@ -17,15 +17,13 @@ const DropdownComponent = () => {
     const response = await Provincias.get(`/departamentos?provincia=${idProvincia}&campos=id,nombre&max=999`);
     setDepartametnos(response.data.departamentos)
   }
-
-  //cambiar los values
-  const [value, setValue] = useState(null);
-
-  const [value2, setValue2] = useState(null);
-
-  //cambiar prov por provincia
-  const [prov,setProv] = useState([]);
+  
+  const [valueProvincia, setValueProvincia] = useState(null);
+  const [valueDepartamento, setValueDepartamento] = useState(null);
+  
+  const [provincia,setProvincia] = useState([]);
   const [departamentos,setDepartametnos] = useState([]);
+  
 
   useEffect(() => {
     getProvincias()
@@ -39,16 +37,16 @@ const DropdownComponent = () => {
       selectedTextStyle={styles.selectedTextStyle}
       inputSearchStyle={styles.inputSearchStyle}
       iconStyle={styles.iconStyle}
-      data={prov}
+      data={provincia}
       search
       maxHeight={300}
       labelField="nombre"
       valueField="id"
       placeholder="Provincia..."
       searchPlaceholder="Search..."
-      value={value}
+      value={valueProvincia}
       onChange={item => {
-        setValue(item.id);
+        setValueProvincia(item.id);
         getDepartamento(item.id);
       }}
       renderLeftIcon={() => (
@@ -68,9 +66,9 @@ const DropdownComponent = () => {
       valueField="id"
       placeholder="Localidad..."
       searchPlaceholder="Search..."
-      value={value2}
+      value={valueDepartamento}
       onChange={item => {
-        setValue2(item.id);
+        setValueDepartamento(item.id);
       }}
       renderLeftIcon={() => (
         <Entypo style={styles.icon} color="black" name="location-pin" size={20} />
