@@ -5,10 +5,10 @@ import { Divider } from '@rneui/themed';
 import Boton from "../components/Boton";
 import DropdownComponent from "../components/Ciudades";
 import SelectorFecha from '../components/SelectorFecha';
-import DatePicker from 'react-native-modern-datepicker';
 
 
-const BuscarGrupo = ()=>{
+
+const BuscarGrupo = (props)=>{
     
     
 
@@ -27,7 +27,7 @@ const BuscarGrupo = ()=>{
 
                         <DropdownComponent />
 
-                         <Divider width={2} color="#112a52" marginTop={10}/>
+                         <Divider width={1} color="#112a52" marginTop={5}/>
 
                         <View style={styles.cuerpoTitulo}>
                             <Text>Destino</Text>
@@ -35,7 +35,7 @@ const BuscarGrupo = ()=>{
                         
                         <DropdownComponent />
 
-                        <Divider width={2} color="#112a52" marginTop={10}/>
+                        <Divider width={1} color="#112a52" marginTop={5}/>
 
                         <View style={styles.cuerpoTitulo}>
                             <Text>Alojamiento</Text>
@@ -45,7 +45,7 @@ const BuscarGrupo = ()=>{
                             <TextInput style={styles.textInput}/>
                         </View>
 
-                        <Divider width={2} color="#112a52" marginTop={10}/>
+                        <Divider width={1} color="#112a52" marginTop={5}/>
                     
                         <View style={styles.cuerpoTitulo}>
                             <Text>Cantidad de personas</Text>
@@ -55,7 +55,7 @@ const BuscarGrupo = ()=>{
                             <TextInput style={styles.textInput} keyboardType="numeric"/>
                         </View>
                
-                        <Divider width={2} color="#112a52" marginTop={10}/>
+                        <Divider width={1} color="#112a52" marginTop={5}/>
 
                         <View style={styles.cuerpoTitulo}>
                             <Text>Fecha</Text>
@@ -72,7 +72,7 @@ const BuscarGrupo = ()=>{
 
                 <Divider width={2} color="#112a52" marginTop={10}/>
 
-                <Boton />
+                <Boton titulo="Buscar" color="#112a52"/>
 
                 <Divider width={2} color="#112a52"/>
 
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     },
 
     cabecera: {
-        height: 70,
+        height: 50,
         backgroundColor: '#08234f',
         borderwidth: 2,
         borderColor: 'black',
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     },
 
     titulo: {
-        fontSize: 24,
+        fontSize: 22,
         alignSelf: "center",
         color: "white"
     },
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     },
     cuerpoTitulo: {
 
-        margin: 10,
+        margin: 8,
         
     },
     cuerpoInput: {
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         marginHorizontal: 15,
         borderRadius:5,
-        height: 30,
+        height: 25,
         flexDirection: 'row',
 
     },
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
 
     boton: {
         marginHorizontal: 30,
-        marginVertical: 15,
+        marginVertical: 10,
         height: 50,
         
     },

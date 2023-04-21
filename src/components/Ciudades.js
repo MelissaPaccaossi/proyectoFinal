@@ -83,7 +83,7 @@ export default DropdownComponent;
 const styles = StyleSheet.create({
   dropdown: {
     margin: 16,
-    height: 40,
+    height: 30,
     borderBottomColor: 'gray',
     borderBottomWidth: 0.5,
   },
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     height: 20,
   },
   inputSearchStyle: {
-    height: 40,
+    height: 30,
     fontSize: 16,
   },
 });
