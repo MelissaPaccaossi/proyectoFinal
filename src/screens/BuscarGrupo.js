@@ -9,11 +9,8 @@ import DatePicker from 'react-native-modern-datepicker';
 
 
 const BuscarGrupo = ()=>{
-    const [open,setOpen] = useState(false);
-
-    const handleOnPress = () => {
-        setOpen(!open)
-    }
+    
+    
 
     return(
         <View style={styles.base}>
@@ -64,35 +61,14 @@ const BuscarGrupo = ()=>{
                             <Text>Fecha</Text>
                         </View>
 
-                        <View style={styles.cuerpoInput}>
-                            <TouchableOpacity onPress={handleOnPress} style={{ flex:1 }}>
-                                 <FontAwesome name="calendar" size={25}/>
-                                 <TextInput style={styles.textInput} placeholder="Desde"/>
-                            </TouchableOpacity>  
-                            
-                            <Modal
-                            animationType="slide"
-                            transparent={true}
-                            visible={open}
-                            >
-                                <View style={styles.centeredView}>
-                                    <View style={styles.modalView}>
-                                        <DatePicker
-                                        
-                                        />
-                                        <TouchableOpacity onPress={handleOnPress}>
-                                            <Text>Cerrar</Text>
-                                        </TouchableOpacity>
-                                    </View>
-                                </View>
-
-                            </Modal>
-                        </View>                       
-
-                        <View style={styles.cuerpoInput}>
-                            <FontAwesome name="calendar" size={25}/>
-                            <TextInput style={styles.textInput} placeholder="Hasta"/>
+                        <View style={{flexDirection: 'row'}
+                            }>
+                            <SelectorFecha/>
+                            <SelectorFecha/>
                         </View>
+
+                      
+                        
 
                 <Divider width={2} color="#112a52" marginTop={10}/>
 
@@ -132,7 +108,7 @@ const styles = StyleSheet.create({
     },
 
     cabecera: {
-        height: 80,
+        height: 70,
         backgroundColor: '#08234f',
         borderwidth: 2,
         borderColor: 'black',
@@ -152,8 +128,9 @@ const styles = StyleSheet.create({
     
     },
     cuerpoTitulo: {
+
+        margin: 10,
         
-        margin: 12,
     },
     cuerpoInput: {
         backgroundColor: '#e1eef7',

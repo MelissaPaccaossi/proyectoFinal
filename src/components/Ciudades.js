@@ -39,7 +39,7 @@ const DropdownComponent = () => {
       iconStyle={styles.iconStyle}
       data={provincia}
       search
-      maxHeight={300}
+      maxHeight={400}
       labelField="nombre"
       valueField="id"
       placeholder="Provincia..."
@@ -83,7 +83,7 @@ export default DropdownComponent;
 const styles = StyleSheet.create({
   dropdown: {
     margin: 16,
-    height: 50,
+    height: 40,
     borderBottomColor: 'gray',
     borderBottomWidth: 0.5,
   },
