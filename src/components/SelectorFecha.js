@@ -9,7 +9,7 @@ const SelectorFecha = () => {
     const handleOnPress = () => {
         setOpen(!open)}
 
-    const [selectedDateHasta, setSelectedDateHasta] = useState('');
+    const [selectedDate, setSelectedDate] = useState('');
     
     
 
@@ -17,7 +17,7 @@ const SelectorFecha = () => {
     <View style={styles.fecha}>
       <TouchableOpacity onPress={handleOnPress} style={styles.touchableFecha}>
               <FontAwesome name="calendar" size={25}/>
-              <Text style={styles.textFecha}>{selectedDateHasta}</Text>            
+              <Text style={styles.textFecha}>{selectedDate}</Text>            
       </TouchableOpacity>      
       
       <Modal
@@ -29,7 +29,7 @@ const SelectorFecha = () => {
             <View style={styles.modalView}>
                 <DatePicker
                   mode='calendar'
-                  onDateChange={date => setSelectedDateHasta(date)}
+                  onDateChange={date => setSelectedDate(date)}
                 />
                 <TouchableOpacity onPress={handleOnPress}>
                     <Text>Cerrar</Text>

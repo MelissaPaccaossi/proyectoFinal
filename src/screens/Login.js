@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import { Text, Divider, useTheme, Input,Button } from '@rneui/themed';
-import { ScrollView, StyleSheet, View } from 'react-native';
-
+import { ScrollView, StyleSheet, View,TouchableOpacity } from 'react-native';
+import { Icon } from '@rneui/themed';
+import Boton from '../components/Boton'
 
 
 const DividerView = () => {
@@ -10,23 +11,30 @@ return (
   <>
     <ScrollView>
       <Text style={styles.subHeader}>Login AVI</Text>
+        <View>
+          <TouchableOpacity style={ styles.botonFacebook }>
+            <Icon
+            name='facebook'
+            type='FontAwesome5Brands'
+            color='#517fa4'
+            size={80}
+            marginHorizontal={20}
+            />
+            <Text style={styles.labelFacebook}>Iniciar Sesion con Facebook</Text>
+          </TouchableOpacity>
+        </View>
       <View style={styles.horizontal}>
+        <Text style={styles.labelAvi}>Inicia Sesion con tu cuenta de AVI</Text>
           <Input
           placeholder='correo@correo.com'
           />
-        <Divider />
-        <Input placeholder="Password" secureTextEntry={true} />
-        <Divider />
-        <Button
-              title={'Ingresar'}
-              containerStyle={{
-                width: 200,
-                marginHorizontal: 50,
-                marginVertical: 10,
-                
-              }}
-            />
-        <Divider width={5} color={theme?.colors?.primary} />
+         <Input placeholder="Password" secureTextEntry={true} />
+          <Boton
+          titulo='Ingresar'
+          color="#112a52"
+              />
+          <Divider width={1} inset={true} insetType="middle" />
+            <Text style={styles.textoRegistro}>¿No tienes una cuenta? Regístrate(hacer enlace)</Text>
       </View>
     </ScrollView>
   </>
@@ -44,17 +52,27 @@ subHeader: {
 horizontal: {
   marginBottom: 10,
 },
-horizontalText: {
-  textAlign: 'center',
-  fontSize: 16,
-  marginVertical: 10,
+botonFacebook:{
+marginBottom: 20,
+marginTop:30,
+flexDirection: 'row',
+justifyContent: 'center'
 },
-vertical: {
-  marginBottom: 10,
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-evenly',
+labelFacebook:{
+  fontSize:20,
+  marginTop:25,
+  marginRight:25
 },
+labelAvi:{
+marginVertical:20,
+fontSize:20,
+alignSelf:'center',
+},
+textoRegistro:{
+alignSelf:'center',
+marginVertical:15,
+fontSize:15
+}
 });
 
 export default DividerView;

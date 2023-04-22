@@ -2,16 +2,16 @@ import React from 'react';
 import {View,StyleSheet,} from 'react-native';
 import {Button } from '@rneui/themed';
 
-const Boton = (props) => {
+const Boton = ({titulo,color}) => {
 
     return(       
 
         <View style={styles.buttonsContainer}>
     
         <Button
-            title={props.titulo}
+            title={titulo}
             buttonStyle={{
-                backgroundColor: `${props.color}`,                        
+                backgroundColor: `${color}`,                        
                 borderColor: 'white',
                 borderRadius: 30,
             }}
