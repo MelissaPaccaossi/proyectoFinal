@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Text, Divider, useTheme, Input,Button } from '@rneui/themed';
-import { ScrollView, StyleSheet, View,TouchableOpacity } from 'react-native';
+import { Text, Divider, useTheme, Input } from '@rneui/themed';
+import { ScrollView, StyleSheet, View,TouchableOpacity, TextInput } from 'react-native';
 import { Icon } from '@rneui/themed';
 import Boton from '../components/Boton'
 
@@ -11,7 +11,7 @@ return (
   <>
     <ScrollView>
       <Text style={styles.subHeader}>Login AVI</Text>
-        <View>
+      <View>
           <TouchableOpacity style={ styles.botonFacebook }>
             <Icon
             name='facebook'
@@ -22,19 +22,42 @@ return (
             />
             <Text style={styles.labelFacebook}>Iniciar Sesion con Facebook</Text>
           </TouchableOpacity>
-        </View>
+      </View>
       <View style={styles.horizontal}>
         <Text style={styles.labelAvi}>Inicia Sesion con tu cuenta de AVI</Text>
-          <Input
+        <Input
           placeholder='correo@correo.com'
+          inp
           />
-         <Input placeholder="Password" secureTextEntry={true} />
-          <Boton
+        <Input placeholder="Constraseña" secureTextEntry={true} />
+        <Boton
           titulo='Ingresar'
           color="#112a52"
-              />
+        />
+        <Divider width={1} inset={true} insetType="middle" />
+        <Text style={styles.textoRegistro}>¿No tienes una cuenta? Regístrate(hacer enlace)</Text>
+      </View>
+
+      <View style={styles.containerInput2}>
           <Divider width={1} inset={true} insetType="middle" />
-            <Text style={styles.textoRegistro}>¿No tienes una cuenta? Regístrate(hacer enlace)</Text>
+          <View style={styles.inputView}>
+              <TextInput 
+                  style={styles.input2}                  
+                  placeholder='Correo@correo.com'
+                  inputMode='email'
+                  autoCapitalize='none'
+                  autoCorrect={false}
+              />
+          </View>
+          <View style={styles.inputView}>
+              <TextInput
+                  style={styles.input2}                   
+                  placeholder='Contraseña'
+                  secureTextEntry={true}
+              />
+          </View>
+          
+          
       </View>
     </ScrollView>
   </>
@@ -72,7 +95,27 @@ textoRegistro:{
 alignSelf:'center',
 marginVertical:15,
 fontSize:15
+},
+containerInput2:{
+  alignItems:'center',
+  
+},
+input2:{
+  marginLeft: 30,
+  fontSize: 15,
+},
+inputView:{  
+  height:50,
+  width: 320,
+  marginVertical: 3,
+  borderRadius:25,
+  backgroundColor: '#e6e6e6', 
+  justifyContent:'center',
+  borderBottomColor:'#cdd0d4',
+  borderBottomWidth: 1
 }
 });
 
 export default DividerView;
+
+
