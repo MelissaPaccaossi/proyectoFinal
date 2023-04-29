@@ -25,19 +25,11 @@ return (
       </View>
       <View style={styles.horizontal}>
         <Text style={styles.labelAvi}>Inicia Sesion con tu cuenta de AVI</Text>
-        <Input
+        {/* <Input
           placeholder='correo@correo.com'
           inp
           />
-        <Input placeholder="Constraseña" secureTextEntry={true} />
-        <Boton
-          titulo='Ingresar'
-          color="#112a52"
-        />
-        <Divider width={1} inset={true} insetType="middle" />
-        <Text style={styles.textoRegistro}>¿No tienes una cuenta? Regístrate(hacer enlace)</Text>
-      </View>
-
+        <Input placeholder="Constraseña" secureTextEntry={true} /> */}
       <View style={styles.containerInput2}>
           <Divider width={1} inset={true} insetType="middle" />
           <View style={styles.inputView}>
@@ -56,9 +48,16 @@ return (
                   secureTextEntry={true}
               />
           </View>
-          
-          
       </View>
+        <Boton
+          titulo='Ingresar'
+          color="#112a52"
+        />
+        <Divider width={1} inset={true} insetType="middle" />
+        <Text style={styles.textoRegistro}>¿No tienes una cuenta? Regístrate(hacer enlace)</Text>
+      </View>
+
+
     </ScrollView>
   </>
 );
@@ -102,7 +101,7 @@ containerInput2:{
 },
 input2:{
   marginLeft: 30,
-  fontSize: 15,
+  fontSize: 15
 },
 inputView:{  
   height:50,
@@ -112,7 +111,8 @@ inputView:{
   backgroundColor: '#e6e6e6', 
   justifyContent:'center',
   borderBottomColor:'#cdd0d4',
-  borderBottomWidth: 1
+  borderBottomWidth: 1,
+  marginBottom:15
 }
 });
 
