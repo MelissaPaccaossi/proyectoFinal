@@ -25,11 +25,6 @@ return (
       </View>
       <View style={styles.horizontal}>
         <Text style={styles.labelAvi}>Inicia Sesion con tu cuenta de AVI</Text>
-        {/* <Input
-          placeholder='correo@correo.com'
-          inp
-          />
-        <Input placeholder="Constraseña" secureTextEntry={true} /> */}
       <View style={styles.containerInput2}>
           <Divider width={1} inset={true} insetType="middle" />
           <View style={styles.inputView}>
